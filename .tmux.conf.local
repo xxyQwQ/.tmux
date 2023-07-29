@@ -356,12 +356,30 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+set -g status-keys vi
+set -g mode-keys vi
+
+# window and pane indices start from 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# use ` as an alias for ctrl+b
+set-option -g prefix2 `
+
+# reload tmux config
+bind r source-file ~/.tmux.conf \; display "config reloaded"
+
+# split pane
+unbind '"'
+unbind %
+unbind -
+unbind _
+bind - split-window -v
+bind | split-window -h
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
