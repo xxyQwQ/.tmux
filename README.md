@@ -15,7 +15,7 @@ Requirements:
 Installing in home directory:
 ```
 $ cd
-$ git clone https://github.com/gpakosz/.tmux.git
+$ git clone https://github.com/xxyQwQ/.tmux
 $ ln -s -f .tmux/.tmux.conf
 $ cp .tmux/.tmux.conf.local .
 ```
